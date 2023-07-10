@@ -1,4 +1,4 @@
-@extends('layouts.site')
+@extends('layouts.app')
 @section('content')
 <div class="site wrapper-content">
     <div class="top_site_main" style="background-image:url(images/banner/top-heading.jpg);">
