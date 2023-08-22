@@ -474,7 +474,7 @@
                                         </a>
                                     </li>
                                     <li class="list-inline-item">
-                                        <a class="link-fx text-dual" href="op_auth_signin.html">
+                                        <a class="link-fx text-dual" href="{{ route('logout') }}">
                                             <i class="fa fa-sign-out-alt"></i>
                                         </a>
                                     </li>

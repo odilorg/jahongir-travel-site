@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,14 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/admin', function () {
-    return view('admin.admin');
+Route::middleware(['auth' ])->group(function () {
+    Route::get('/admin', function () {
+        return view('admin.admin');
+    });
 });
+
+
+
+Route::get('/login', [RegisterController::class, 'loginForm'])->name('loginForm');
+Route::post('/login', [RegisterController::class, 'login'])->name('login');
+Route::get('/logout', [RegisterController::class, 'logout'])->name('logout');
