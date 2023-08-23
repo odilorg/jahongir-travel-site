@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ToursController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -30,6 +31,12 @@ Route::middleware(['auth' ])->group(function () {
     Route::get('/admin', function () {
         return view('admin.admin');
     });
+    Route::resources([
+        'tours' => ToursController::class,
+        
+       
+    
+    ]);
 });
 
 
