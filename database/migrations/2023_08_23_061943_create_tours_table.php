@@ -25,9 +25,10 @@ class CreateToursTable extends Migration
             $table->json('tour_not_includes');
             $table->string('tour_file',100);
             $table->string('tour_code',80);
-            $table->json('tour_itinarary_title');
-            $table->json('tour_itinarary_description');
-
+            $table->string('tour_location');
+            $table->json('tour_gallery_images');
+            $table->foreignId('itinarary_id');
+            $table->foreignId('tour_category_id');
 
 
 
