@@ -19,15 +19,16 @@
 
         <!-- Icons -->
         <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-        <link rel="shortcut icon" href="assets/media/favicons/favicon.png"> <link rel="icon" type="image/png" sizes="192x192" href="assets/media/favicons/favicon-192x192.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/media/favicons/apple-touch-icon-180x180.png">
+        <link rel="shortcut icon" href="assets/media/favicons/favicon.png"> <link rel="icon" type="image/png" sizes="192x192" href=" {{ asset('assets/media/favicons/favicon-192x192.png') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/media/favicons/apple-touch-icon-180x180.png') }} ">
         <!-- END Icons -->
 
         <!-- Stylesheets -->
 
         <!-- Fonts and Codebase framework -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap"> 
-        <link rel="stylesheet" id="css-main" href="assets/css/codebase.min.css">
+        <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/codebase.min.css') }}">
+        
 
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
@@ -94,7 +95,7 @@
                     class="content-header">
                     <!-- User Avatar -->
                     <a class="img-link me-2" href="be_pages_generic_profile.html">
-                        <img class="img-avatar img-avatar32" src="assets/media/avatars/avatar15.jpg" alt="">
+                        <img class="img-avatar img-avatar32" src="{{ asset('assets/media/avatars/avatar15.jpg') }} " alt="">
                     </a>
                     <!-- END User Avatar -->
 
@@ -453,14 +454,14 @@
                             class="content-side content-side-user px-0 py-0">
                             <!-- Visible only in mini mode -->
                             <div class="smini-visible-block animated fadeIn px-3">
-                                <img class="img-avatar img-avatar32" src="assets/media/avatars/avatar15.jpg" alt="">
+                                <img class="img-avatar img-avatar32" src="{{ asset('assets/media/avatars/avatar15.jpg') }} " alt="">
                             </div>
                             <!-- END Visible only in mini mode -->
 
                             <!-- Visible only in normal mode -->
                             <div class="smini-hidden text-center mx-auto">
                                 <a class="img-link" href="be_pages_generic_profile.html">
-                                    <img class="img-avatar" src="assets/media/avatars/avatar15.jpg" alt="">
+                                    <img class="img-avatar" src="{{ asset('assets/media/avatars/avatar15.jpg') }} " alt="">
                                 </a>
                                 <ul class="list-inline mt-3 mb-0">
                                     <li class="list-inline-item">
@@ -498,7 +499,7 @@
                                             </a>
                                             <ul class="nav-main-submenu">
                                                 <li class="nav-main-item">
-                                                    <a class="nav-main-link active" href="be_pages_ecom_dashboard.html">
+                                                    <a class="nav-main-link active" href="{{ route('tours.create') }}">
                                                         <span class="nav-main-link-name">Add tour</span>
                                                     </a>
                                                 </li>
@@ -786,8 +787,7 @@
                         <div class="content content-top content-full text-center">
                             <div class="py-3">
                                 <h1 class="h2 fw-bold text-white mb-2">Create a tour</h1>
-                                <h2 class="h4 fw-normal text-white-75 mb-0">Welcome Admin, you have
-                                    <a class="text-primary-light link-fx" href="be_pages_ecom_orders.html">12 pending orders</a>.</h2>
+                                
                             </div>
                         </div>
                     </div>

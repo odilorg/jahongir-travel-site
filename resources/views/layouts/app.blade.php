@@ -121,7 +121,7 @@
                                     <a href="/contact">Contact US</a>
                                 </li>
                                 <li class="small_login">
-                                    <a href="#">Login
+                                    <a href="/login">Login
                                     </a>
                                 </li>
                                 <li class="small_login">

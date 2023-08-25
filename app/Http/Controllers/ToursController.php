@@ -24,7 +24,8 @@ class ToursController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tours.create');
+        
     }
 
     /**
