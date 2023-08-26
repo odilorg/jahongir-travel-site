@@ -14,7 +14,12 @@ class Tours extends Model
         'tour_duration',
         'tour_description',
         'tour_start_end_points',
-        
+        'tour_departure_time',
+        'tour_file',
+        'tour_code',
+        'tour_location'
+
+
 
 
 ];

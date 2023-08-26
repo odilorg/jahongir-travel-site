@@ -43,7 +43,7 @@ class ToursController extends Controller
             'tour_start_end_points' => ['required', 'max:255'],
             'tour_departure_time' => ['required', 'max:255'],
             'tour_code' => ['required', 'max:255'],
-            'tour_location' => ['required', 'max:255'],
+            'tour_location' => ['required', 'max:1555'],
             
              
              'tour_file' => ['nullable', 'image'],
@@ -58,7 +58,7 @@ class ToursController extends Controller
          session()->flash('type', 'Tour Creation');
          
 
-        return redirect('tours');  
+        return redirect('/admin');  
     }
 
     /**
