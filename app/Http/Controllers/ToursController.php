@@ -14,7 +14,7 @@ class ToursController extends Controller
      */
     public function index()
     {
-        //
+        dd('all tours are here');
     }
 
     /**
@@ -36,7 +36,29 @@ class ToursController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes =  request()->validate([
+            'tour_title' => ['required', 'max:255'],
+            'tour_duration' => ['required', 'max:255'],
+            'tour_description' => ['required', 'max:555'],
+            'tour_start_end_points' => ['required', 'max:255'],
+            'tour_departure_time' => ['required', 'max:255'],
+            'tour_code' => ['required', 'max:255'],
+            'tour_location' => ['required', 'max:255'],
+            
+             
+             'tour_file' => ['nullable', 'image'],
+            
+        ]);
+        //dd($attributes);
+     
+      $attributes['tour_file'] = request()->file('tour_file')->store('tour_file');
+        (Tours::create($attributes));
+        
+         session()->flash('success', 'Tour has been created');
+         session()->flash('type', 'Tour Creation');
+         
+
+        return redirect('tours');  
     }
 
     /**
