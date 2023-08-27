@@ -839,6 +839,24 @@
                 Core libraries and functionality
                 webpack is putting everything together at assets/_js/main/app.js
             -->
+            
+        <script>
+            $(document).ready(function() {
+                $(".add_item_btn").click(function(e) {
+                    e.preventDefault();
+                    $("#show_item").prepend('<div class="col-12">
+                      <label class="visually-hidden" for="example-if-email">Email</label>
+                      <input type="text" class="form-control" id="example-if-email" name="example-if-email" placeholder="Item">
+                    </div>
+                    
+                    <div>
+                      <button type="submit" class="btn btn-primary">Add</button>
+                    </div>');
+                });
+                
+            });
+        </script>
+            <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" ></script>
         <script src="assets/js/codebase.app.min.js"></script>
 
         <!-- Page JS Plugins -->
