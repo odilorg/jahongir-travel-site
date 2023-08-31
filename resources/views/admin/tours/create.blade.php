@@ -105,7 +105,7 @@
             </div>
             <div class="block-content block-content-full">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div id="add_fields" class="col-lg-4">
                         <p class="text-muted">
                             Using an inline layout can come really handy for small forms
                         </p>
@@ -131,7 +131,7 @@
                             </div>
 
                             <div>
-                                <button class="add_item_btn btn btn-primary">Add</button>
+                                <input class="btn btn-danger" id="add" type="button" value="ADD">
                             </div>
 
 
@@ -146,7 +146,18 @@
         <!-- END Inline -->
 
         <!-- END Basic -->
-
+        <script>
+            $(document).ready(function() {
+               var html = '<div class="col-12"> <label class="visually-hidden" for="example-if-email">Email</label><input type="text" class="form-control" id="example-if-email" name="example-if-email" placeholder="Item"></div><div><button type="submit" class="btn btn-primary">Add</button></div>';
+                $("#add").click(function() {
+                    $("#add_fields").append(html);
+                   
+                   
+                    
+                });
+                
+            });
+        </script>
 
 
 

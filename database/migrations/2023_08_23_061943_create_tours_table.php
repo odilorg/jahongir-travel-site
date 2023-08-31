@@ -21,14 +21,14 @@ class CreateToursTable extends Migration
             $table->text('tour_description');
             $table->string('tour_start_end_points',100);
             $table->string('tour_departure_time',100);
-            $table->json('tour_includes');
-            $table->json('tour_not_includes');
+            // $table->json('tour_includes');
+            // $table->json('tour_not_includes');
             $table->string('tour_file',100);
             $table->string('tour_code',80);
             $table->string('tour_location');
-            $table->json('tour_gallery_images');
-            $table->foreignId('itinarary_id');
-            $table->foreignId('tour_category_id');
+            //$table->json('tour_gallery_images');
+            // $table->foreignId('itinarary_id');
+            // $table->foreignId('tour_category_id');
 
 
 

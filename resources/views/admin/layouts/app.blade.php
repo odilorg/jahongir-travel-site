@@ -28,7 +28,7 @@
         <!-- Fonts and Codebase framework -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap"> 
         <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/codebase.min.css') }}">
-        
+        <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" ></script>
 
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
@@ -840,23 +840,8 @@
                 webpack is putting everything together at assets/_js/main/app.js
             -->
             
-        <script>
-            $(document).ready(function() {
-                $(".add_item_btn").click(function(e) {
-                    e.preventDefault();
-                    $("#show_item").prepend('<div class="col-12">
-                      <label class="visually-hidden" for="example-if-email">Email</label>
-                      <input type="text" class="form-control" id="example-if-email" name="example-if-email" placeholder="Item">
-                    </div>
-                    
-                    <div>
-                      <button type="submit" class="btn btn-primary">Add</button>
-                    </div>');
-                });
-                
-            });
-        </script>
-            <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" ></script>
+        
+           
         <script src="assets/js/codebase.app.min.js"></script>
 
         <!-- Page JS Plugins -->
