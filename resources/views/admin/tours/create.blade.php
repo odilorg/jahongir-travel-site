@@ -98,62 +98,63 @@
                 </form>
             </div>
         </div>
-        <!-- Inline -->
-        <div class="block block-rounded">
-            <div class="block-header block-header-default">
-                <h3 class="block-title">Inline</h3>
-            </div>
-            <div class="block-content block-content-full">
-                <div class="row">
-                    <div id="add_fields" class="col-lg-4">
-                        <p class="text-muted">
-                            Using an inline layout can come really handy for small forms
-                        </p>
-                    </div>
-                    <form class="row row-cols-lg-auto g-3 align-items-center" action="#" method="POST">
-                        <div class="col-lg-8 space-y-2">
-                            <div class="mb-4">
-                                <label class="form-label" for="example-text-input">Itinerary Title</label>
-                                <input type="text" value="{{ old('itinerary_title') }}"
-                                    class="form-control  @error('itinerary_title')  {{ 'is-invalid' }} @enderror "
-                                    id="example-text-input" name="itinerary_title" placeholder="Itinerary Title">
-                                @error('itinerary_title')
-                                    <p class="text-danger">{{ $message }}</p>
-                                @enderror
-                            </div>
-                            <!-- Form Inline - Default Style -->
-
-
-                            <div id="show_item" class="col-12">
-                                <label class="visually-hidden" for="example-if-email">Email</label>
-                                <input type="text" class="form-control" id="example-if-email" name="itinerary_item[]"
-                                    placeholder="Item">
-                            </div>
-
-                            <div>
-                                <input class="btn btn-danger" id="add" type="button" value="ADD">
-                            </div>
-
-
-                            <!-- END Form Inline - Default Style -->
-
-
-                        </div>
-                    </form>
-                </div>
-            </div>
+<!------------>
+<div class="block block-rounded">
+    <div class="block-header block-header-default">
+      <h3 class="block-title">Inline</h3>
+    </div>
+    <div class="block-content block-content-full">
+      <div class="row">
+        <div class="col-lg-4">
+          <p class="text-muted">
+            Using an inline layout can come really handy for small forms
+          </p>
         </div>
-        <!-- END Inline -->
+        <div id="add_fields" class="col-lg-8 space-y-2">
+          <!-- Form Inline - Default Style -->
+          <form class="row row-cols-lg-auto g-3 align-items-center" action="be_forms_layouts.html" method="POST" onsubmit="return false;">
+            <div class="col-12">
+              <label class="visually-hidden" for="example-if-email">Email</label>
+              <input type="email" class="form-control" id="example-if-email" name="example-if-email" placeholder="Email">
+            </div>
+            <div class="col-12">
+              <label class="visually-hidden" for="example-if-password">Password</label>
+              <input type="password" class="form-control" id="example-if-password" name="example-if-password" placeholder="Password">
+            </div>
+            <div>
+                <input class="btn btn-primary" id="add" type="button" value="ADD">
+            </div>
+          </form>
+        </div>
+          <!-- END Form Inline - Default Style -->
+
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!------------->
+
+
+        
 
         <!-- END Basic -->
         <script>
             $(document).ready(function() {
-               var html = '<div class="col-12"> <label class="visually-hidden" for="example-if-email">Email</label><input type="text" class="form-control" id="example-if-email" name="example-if-email" placeholder="Item"></div><div><button type="submit" class="btn btn-primary">Add</button></div>';
-                $("#add").click(function() {
-                    $("#add_fields").append(html);
-                   
-                   
+               var html = '<div id="remove_fields" class="row row-cols-lg-auto g-3 align-items-center" action="be_forms_layouts.html" method="POST" onsubmit="return false;"><div class="col-12"><label class="visually-hidden" for="example-if-email">Email</label><input type="email" class="form-control" id="example-if-email" name="example-if-email" placeholder="Email"></div><div class="col-12"><label class="visually-hidden" for="example-if-password">Password</label><input type="password" class="form-control" id="example-if-password" name="example-if-password" placeholder="Password"></div><div><input class="btn btn-danger" id="remove" type="button" value="REMOVE"></div></div>';
+               var max = 10; 
+               var x = 1;
+               $("#add").click(function() {
+                    if (x <= max) {
+                        $("#add_fields").append(html);           
+                        x++;    
+                    }
                     
+                });
+                $("#add_fields").on('click', '#remove', function(){
+                    $(this).closest('#remove_fields').remove();
+                    x--;
                 });
                 
             });
