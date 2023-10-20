@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Tours;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rules\File;
 
 class ToursController extends Controller
 {
@@ -47,11 +46,7 @@ class ToursController extends Controller
             'tour_description_departure_time' => ['required', 'max:255'],
             'tour_description_included' => ['required', 'max:1555'],
             'tour_description_not_included' => ['required', 'max:1555'],
-            'tour_description_details_file' => ['nullable',
-            File::types(['pdf'])
-            ->min(1024)
-            ->max(12 * 1024),
-        ],
+            'tour_description_details_file' => ['nullable', 'file'],
             'tour_itinarary' => ['required', 'max:3555'],
             'tour_location_link' => ['required', 'max:1255'],
 
