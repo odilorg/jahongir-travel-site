@@ -26,9 +26,9 @@ class CreateToursTable extends Migration
             $table->text('tour_description_included');
             $table->text('tour_description_not_included');
             $table->string('tour_description_details_file',150);
-            $table->string('tour_itinarary_day_locations',150);
-            $table->integer('tour_itinarary_duration');
-            $table->text('tour_itinarary_day_description');
+            $table->text('tour_itinarary');
+            // $table->integer('tour_itinarary_duration');
+            // $table->text('tour_itinarary_day_description');
             $table->string('tour_location_link',350);
 
 

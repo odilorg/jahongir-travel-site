@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tours;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\File;
 
 class ToursController extends Controller
 {
@@ -38,20 +39,27 @@ class ToursController extends Controller
     {
         $attributes =  request()->validate([
             'tour_title' => ['required', 'max:255'],
+            'tour_code' => ['required', 'max:255'],            
             'tour_duration' => ['required', 'max:255'],
-            'tour_description' => ['required', 'max:555'],
-            'tour_start_end_points' => ['required', 'max:255'],
-            'tour_departure_time' => ['required', 'max:255'],
-            'tour_code' => ['required', 'max:255'],
-            'tour_location' => ['required', 'max:1555'],
-            
-             
-             'tour_file' => ['nullable', 'image'],
+            'tour_description_name' => ['nullable', 'max:555'],
+            'tour_description' => ['required', 'max:3555'],
+            'tour_description_departure_return' => ['required', 'max:255'],
+            'tour_description_departure_time' => ['required', 'max:255'],
+            'tour_description_included' => ['required', 'max:1555'],
+            'tour_description_not_included' => ['required', 'max:1555'],
+            'tour_description_details_file' => ['nullable',
+            File::types(['pdf'])
+            ->min(1024)
+            ->max(12 * 1024),
+        ],
+            'tour_itinarary' => ['required', 'max:3555'],
+            'tour_location_link' => ['required', 'max:1255'],
+
             
         ]);
-        //dd($attributes);
+      //  dd($attributes);
      
-      $attributes['tour_file'] = request()->file('tour_file')->store('tour_file');
+      $attributes['tour_description_details_file'] = request()->file('tour_description_details_file')->store('tour_description_details_file');
         (Tours::create($attributes));
         
          session()->flash('success', 'Tour has been created');

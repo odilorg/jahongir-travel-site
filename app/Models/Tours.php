@@ -11,13 +11,23 @@ class Tours extends Model
 
     protected $fillable = [
         'tour_title',
-        'tour_duration',
-        'tour_description',
-        'tour_start_end_points',
-        'tour_departure_time',
-        'tour_file',
         'tour_code',
-        'tour_location'
+        'tour_duration',
+        'tour_description_name',        
+        'tour_description',
+        'tour_description_departure_return',
+        'tour_description_departure_time',
+        'tour_description_included',
+        'tour_description_not_included',
+        'tour_description_details_file',
+        'tour_itinarary',
+        'tour_location_link',
+
+
+
+
+
+        
 
 
 
