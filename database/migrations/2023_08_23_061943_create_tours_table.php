@@ -18,18 +18,18 @@ class CreateToursTable extends Migration
             $table->timestamps();
             $table->string('tour_title', 100);
             $table->string('tour_duration',80);
+            $table->foreignId('category_id');
+            $table->string('tour_description_name',100);
             $table->text('tour_description');
-            $table->string('tour_start_end_points',100);
-            $table->string('tour_departure_time',100);
-            // $table->json('tour_includes');
-            // $table->json('tour_not_includes');
-            $table->string('tour_file',100);
-            $table->string('tour_code',80);
-            $table->string('tour_location');
-            //$table->json('tour_gallery_images');
-            // $table->foreignId('itinarary_id');
-            // $table->foreignId('tour_category_id');
-
+            $table->string('tour_description_departure_return',150);
+            $table->string('tour_description_departure_time',150);
+            $table->text('tour_description_included');
+            $table->text('tour_description_not_included');
+            $table->string('tour_description_details_file',150);
+            $table->string('tour_itinarary_day_locations',150);
+            $table->integer('tour_itinarary_duration');
+            $table->text('tour_itinarary_day_description');
+            $table->string('tour_location_link',350);
 
 
         });
