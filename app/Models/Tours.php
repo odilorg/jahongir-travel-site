@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use App\Models\Included;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Tours extends Model
 {
@@ -23,14 +25,9 @@ class Tours extends Model
         'tour_itinarary',
         'tour_location_link',
 
-
-
-
-
-        
-
-
-
-
 ];
+
+public function included_items() {
+    return $this->belongsToMany(Included::class);
+}
 }

@@ -18,6 +18,7 @@ class CreateToursTable extends Migration
             $table->timestamps();
             $table->string('tour_title', 100);
             $table->string('tour_duration',80);
+            $table->string('tour_code',80);
            // $table->foreignId('category_id');
             $table->string('tour_description_name',100);
             $table->text('tour_description');
