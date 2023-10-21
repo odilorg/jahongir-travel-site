@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TripController;
 use App\Http\Controllers\ToursController;
 use App\Http\Controllers\RegisterController;
 
@@ -33,6 +34,7 @@ Route::middleware(['auth' ])->group(function () {
     });
     Route::resources([
         'tours' => ToursController::class,
+        'trips' => TripController::class,
         
        
     
