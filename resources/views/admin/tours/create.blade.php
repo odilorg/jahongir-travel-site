@@ -121,7 +121,17 @@
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
-                            <button type="submit">Submit</button>
+                            <div class="mb-4">
+                                @foreach ($included_items as $items)
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" value="" id="example-checkbox-inline1 {{ $items->id }}" name="example-checkbox-inline1" >
+                                    <label class="form-check-label" for="example-checkbox-inline1 {{ $items->id }}">{{ $items->included_item_name }}</label>
+                                </div>
+                                @endforeach
+                            </div>
+                            <div class="mb-4">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
                         </div>
                     </div>
 

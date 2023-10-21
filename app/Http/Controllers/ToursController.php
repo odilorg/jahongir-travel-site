@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tours;
+use App\Models\Tour;
+use App\Models\Included;
 use Illuminate\Http\Request;
 
 class ToursController extends Controller
@@ -24,7 +25,9 @@ class ToursController extends Controller
      */
     public function create()
     {
-        return view('admin.tours.create');
+       $included_items = Included::all();
+      // dd($included_items);
+        return view('admin.tours.create', compact('included_items'));
         
     }
 

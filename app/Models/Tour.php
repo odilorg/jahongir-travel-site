@@ -27,7 +27,7 @@ class Tours extends Model
 
 ];
 
-public function included_items() {
+public function includeds() {
     return $this->belongsToMany(Included::class);
 }
 }
